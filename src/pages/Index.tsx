@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import ParticleBackground from '../components/ParticleBackground';
 import ScrollToTop from '../components/ScrollToTop';
 import Footer from '../components/Footer';
+import ReadingProgress from '../components/ReadingProgress';
 
 import HeroSection from '../sections/HeroSection';
 import AboutSection from '../sections/AboutSection';
@@ -17,8 +18,9 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <ParticleBackground />
+      <ReadingProgress />
       <ScrollToTop />
-      <main>
+      <main className="flex-grow">
         <HeroSection />
         <AboutSection />
         <ExperienceSection />
