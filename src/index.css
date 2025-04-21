@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+@layer base {
+  :root {
+    /* Light theme variables */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 217 60% 11%; /* Navy blue color */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 195 100% 43%; /* Cyan color */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 195 100% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217 60% 11%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme variables - using the navy color as background */
+    --background: 217 60% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 65% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 217 60% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 217 60% 11%;
+
+    --secondary: 195 100% 43%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217 50% 20%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 195 100% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 50% 20%;
+    --input: 217 50% 20%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --sidebar-background: 217 60% 7%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 195 100% 43%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 50% 20%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 217 50% 20%;
+    --sidebar-ring: 195 100% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-roboto antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-semibold;
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto;
+  }
+
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl shadow-glass;
+  }
+
+  .nav-link {
+    @apply relative inline-block text-foreground/80 hover:text-foreground transition-colors duration-300
+      after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 
+      after:left-0 after:bg-secondary after:origin-bottom-right after:transition-transform 
+      after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  .btn-primary {
+    @apply bg-secondary hover:bg-accent text-white font-medium rounded-lg px-6 py-2.5 
+      transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1;
+  }
+
+  .btn-outline {
+    @apply border border-secondary text-secondary hover:bg-secondary/10 font-medium 
+      rounded-lg px-6 py-2.5 transition-all duration-300;
+  }
+
+  .timeline-item {
+    @apply relative pl-8 pb-10 border-l border-secondary/50 last:border-l-0 ml-4;
+  }
+
+  .timeline-dot {
+    @apply absolute -left-[13px] -top-1 h-6 w-6 rounded-full bg-secondary flex items-center justify-center;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-cyan bg-clip-text text-transparent;
+  }
+
+  .typing-container {
+    @apply inline-block whitespace-nowrap overflow-hidden;
+  }
+
+  .typing-text {
+    @apply border-r-4 border-secondary animate-typing animate-blink overflow-hidden whitespace-nowrap;
+  }
+
+  .hover-card {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+  }
+
+  .skill-badge {
+    @apply bg-navy-light dark:bg-white/10 text-white dark:text-white px-3 py-1 rounded-full text-sm font-medium m-1 inline-block;
+  }
+
+  /* Particle background animation */
+  .particle {
+    @apply absolute rounded-full opacity-30 animate-float;
+  }
+}
