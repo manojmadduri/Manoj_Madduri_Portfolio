@@ -1,83 +1,84 @@
+
+/* Google Fonts import - Adding more wabi-sabi friendly fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Space+Mono:wght@400;700&family=VT323&family=Press+Start+2P&family=Rubik+Mono+One&family=Noto+Serif+JP:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Google Fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700&family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
-
 @layer base {
   :root {
-    /* Light theme - Modern and vibrant */
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Wabi-sabi inspired earthy color palette */
+    --background: 40 20% 96%;
+    --foreground: 30 25% 18%;
     
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 36 20% 94%;
+    --card-foreground: 30 25% 18%;
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 20% 96%;
+    --popover-foreground: 30 25% 18%;
     
-    --primary: 262.1 83.3% 57.8%;
-    --primary-foreground: 210 20% 98%;
+    --primary: 30 30% 60%;
+    --primary-foreground: 30 25% 18%;
     
-    --secondary: 220 96% 48%;
-    --secondary-foreground: 210 20% 98%;
+    --secondary: 200 30% 45%;
+    --secondary-foreground: 40 20% 96%;
     
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
+    --muted: 30 15% 90%;
+    --muted-foreground: 30 10% 40%;
     
-    --accent: 262.1 83.3% 57.8%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 160 25% 50%;
+    --accent-foreground: 30 25% 18%;
     
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 40 20% 96%;
     
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 262.1 83.3% 57.8%;
+    --border: 30 15% 70%;
+    --input: 30 15% 70%;
+    --ring: 30 30% 60%;
 
-    --gradient-primary-start: #6366F1;
-    --gradient-primary-end: #8B5CF6;
-    --gradient-secondary-start: #14B8A6;
-    --gradient-secondary-end: #0EA5E9;
+    --gradient-primary-start: #C8B6A6;
+    --gradient-primary-end: #A4907C;
+    --gradient-secondary-start: #607274;
+    --gradient-secondary-end: #3A4D4F;
     
-    --radius: 0.75rem;
+    --radius: 0.375rem;
   }
 
   .dark {
-    /* Dark theme - Rich and sophisticated */
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
+    /* Dark wabi-sabi theme - deep earth and indigo */
+    --background: 200 20% 12%;
+    --foreground: 30 15% 90%;
     
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
+    --card: 200 20% 14%;
+    --card-foreground: 30 15% 90%;
     
-    --popover: 224 71% 4%;
-    --popover-foreground: 215 20.2% 65.1%;
+    --popover: 200 20% 12%;
+    --popover-foreground: 30 15% 90%;
     
-    --primary: 263.4 70% 50.4%;
-    --primary-foreground: 210 20% 98%;
+    --primary: 25 30% 50%;
+    --primary-foreground: 30 15% 90%;
     
-    --secondary: 220 96% 48%;
-    --secondary-foreground: 210 20% 98%;
+    --secondary: 200 25% 40%;
+    --secondary-foreground: 30 15% 90%;
     
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
+    --muted: 200 15% 20%;
+    --muted-foreground: 30 10% 70%;
     
-    --accent: 263.4 70% 50.4%;
-    --accent-foreground: 210 20% 98%;
+    --accent: 160 20% 40%;
+    --accent-foreground: 30 15% 90%;
     
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive: 0 50% 40%;
+    --destructive-foreground: 30 15% 90%;
     
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
-    --ring: 263.4 70% 50.4%;
+    --border: 200 15% 25%;
+    --input: 200 15% 25%;
+    --ring: 25 30% 50%;
 
-    --gradient-primary-start: #4F46E5;
-    --gradient-primary-end: #7C3AED;
-    --gradient-secondary-start: #0D9488;
-    --gradient-secondary-end: #0369A1;
+    --gradient-primary-start: #8D7B68;
+    --gradient-primary-end: #6C5F5B;
+    --gradient-secondary-start: #4A6670;
+    --gradient-secondary-end: #2C3639;
   }
 }
 
@@ -88,46 +89,244 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    /* Natural texture background pattern */
+    background-image: 
+      url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z' fill='%23A4907C' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    font-family: 'Cormorant Garamond', serif;
   }
   
-  /* Glass effect styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-normal tracking-wide;
+    font-family: 'Noto Serif JP', serif;
+  }
+  
+  p, li, span {
+    @apply leading-relaxed;
+  }
+  
+  input, textarea, select, button {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Wabi-sabi irregular border */
+  .wabi-border {
+    position: relative;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    @apply border-2 border-border/70;
+  }
+  
+  /* Asymmetrical glass effect */
   .glass {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 dark:bg-black/30;
+    @apply bg-white/10 backdrop-blur-md border border-white/30 dark:bg-black/15 dark:border-white/10;
+    box-shadow: 0 8px 32px rgba(164, 144, 124, 0.1);
+    clip-path: polygon(
+      1% 3%,
+      3% 1%,
+      calc(100% - 5px) 0%,
+      100% 5px,
+      100% calc(100% - 4px),
+      calc(100% - 6px) 100%,
+      5px 100%,
+      0% calc(100% - 6px)
+    );
   }
   
   .glass-card {
-    @apply glass shadow-lg hover:shadow-xl transition-all duration-300;
+    @apply glass shadow-md hover:shadow-lg transition-all duration-500 rounded-lg;
+    transform: rotate(0.4deg);
+  }
+
+  /* Imperfect container - the beauty of irregularity */
+  .imperfect-container {
+    @apply relative;
+    clip-path: polygon(
+      0% 2%,
+      2% 0%,
+      98% 0%,
+      100% 2%,
+      100% 98%,
+      98% 100%,
+      2% 100%,
+      0% 98%
+    );
+    transform: rotate(-0.3deg);
   }
   
-  /* Gradient text */
-  .gradient-text {
-    @apply bg-gradient-primary bg-clip-text text-transparent;
+  /* Natural texture overlay */
+  .natural-texture {
+    @apply relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%23C8B6A6' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      z-index: 0;
+      pointer-events: none;
+    }
   }
-  
-  /* Gradient backgrounds */
-  .gradient-primary {
-    @apply bg-gradient-primary;
-  }
-  
-  .gradient-secondary {
-    @apply bg-gradient-secondary;
+
+  /* Hand-drawn style border */
+  .hand-drawn {
+    position: relative;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border: 2px solid;
+    @apply border-primary/60;
   }
 }
 
 @layer components {
+  /* Wabi-sabi section */
   .section {
-    @apply py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto;
+    @apply py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto relative;
+    transform: rotate(-0.1deg);
   }
-
+  
+  /* Asymmetric button with imperfect shape */
   .btn-primary {
-    @apply bg-secondary hover:bg-accent text-white font-medium rounded-lg px-6 py-2.5 
-      transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1;
+    @apply bg-primary hover:bg-primary/90 text-foreground font-medium rounded-md px-6 py-2.5
+      transition-all duration-500 border border-primary/50 shadow-sm;
+    position: relative;
+    transform: rotate(-0.5deg);
+    clip-path: polygon(
+      2% 5%, 
+      98% 0%, 
+      100% 95%, 
+      5% 100%
+    );
+    &:hover {
+      transform: rotate(0.2deg) translateY(-2px);
+    }
   }
 
   .btn-outline {
-    @apply border border-secondary text-secondary hover:bg-secondary/10 font-medium 
-      rounded-lg px-6 py-2.5 transition-all duration-300;
+    @apply border-2 border-primary text-primary hover:bg-primary/10 font-medium
+      rounded-md px-6 py-2.5 transition-all duration-500;
+    transform: rotate(0.3deg);
+    &:hover {
+      transform: rotate(-0.3deg) translateY(-2px);
+    }
   }
 
-  /* Additional component styles can be added here */
+  /* Imperfect card with hand-drawn border feel */
+  .wabi-card {
+    @apply p-6 bg-card text-card-foreground;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border: 2px solid;
+    @apply border-primary/30 hover:border-primary/50;
+    transition: all 0.5s ease;
+    transform: rotate(-0.3deg);
+    &:hover {
+      transform: rotate(0.2deg) translateY(-2px);
+    }
+  }
+  
+  /* Brush stroke effect for highlighted content */
+  .brush-text {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    &::after {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 50%;
+      width: calc(100% + 10px);
+      height: 40%;
+      background: rgba(164, 144, 124, 0.3);
+      z-index: -1;
+      transform: translateY(-50%) rotate(-1deg);
+    }
+  }
+  
+  /* Asymmetric skill badge with irregular border */
+  .skill-badge {
+    @apply bg-secondary/10 text-secondary px-3 py-1 rounded-md text-sm m-1 inline-block
+      border border-secondary/30 shadow-sm;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    position: relative;
+    transition: all 0.3s ease;
+    transform: rotate(-0.5deg);
+    &:hover {
+      @apply bg-secondary/20 border-secondary/40;
+      transform: translateY(-2px) rotate(0.5deg);
+    }
+  }
+
+  /* Link with irregular underline */
+  .wabi-link {
+    @apply text-primary relative inline-block;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      @apply bg-primary/60;
+      transform: scaleX(0.8) translateX(5%) rotate(-0.5deg);
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+    &:hover::after {
+      transform: scaleX(1) translateX(0) rotate(0.5deg);
+      transform-origin: bottom left;
+    }
+  }
+  
+  /* Natural bullet style */
+  .natural-bullet {
+    @apply before:content-['•'] before:mr-2 before:text-primary;
+  }
+  
+  /* Subtle image effect */
+  .wabi-image {
+    @apply rounded-sm overflow-hidden relative;
+    transform: rotate(-0.4deg);
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @apply bg-primary/5;
+    }
+    & img {
+      transform: scale(1.01);
+      transition: all 0.5s ease;
+    }
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+  
+  /* Imperfect separator */
+  .wabi-separator {
+    @apply w-full h-px my-6;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(164, 144, 124, 0.3) 15%,
+      rgba(164, 144, 124, 0.5) 50%,
+      rgba(164, 144, 124, 0.3) 85%,
+      transparent 100%
+    );
+  }
+  
+  /* Quote styling */
+  .wabi-quote {
+    @apply pl-4 border-l-2 border-primary/50 italic text-foreground/80 my-4;
+    transform: rotate(-0.2deg);
+  }
+  
+  /* Footer styling */
+  .wabi-footer {
+    @apply border-t border-primary/20 py-8 mt-auto;
+    background-image: 
+      url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%23A4907C' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
 }

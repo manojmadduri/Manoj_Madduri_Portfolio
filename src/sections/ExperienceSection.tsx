@@ -1,59 +1,45 @@
 
-import TimelineItem from '../components/TimelineItem';
-import { Briefcase } from 'lucide-react';
+import WorkTimelineItem from '../components/WorkTimelineItem';
+import { Briefcase, Radio } from 'lucide-react';
+import { workExperience } from '../data/resumeData';
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="section bg-background dark:bg-navy-light py-24">
-      <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
-          <span className="gradient-text">Work Experience</span>
-        </h2>
+    <section id="experience" className="section bg-background dark:bg-background py-24 relative overflow-hidden wabi-sabi">
+      {/* Retro grid background with low opacity */}
+      <div className="absolute inset-0 retro-grid opacity-5"></div>
+      
+      <div className="container mx-auto relative z-10">
+        <div className="flex items-center justify-center mb-16">
+          <div className="w-12 h-1 bg-accent/70 rounded-full mr-4 transform -rotate-3"></div>
+          <h2 className="text-3xl md:text-4xl font-bold font-space-mono">
+            <span className="gradient-text glitch" data-text="Work Experience">Work Experience</span>
+          </h2>
+          <div className="w-12 h-1 bg-accent/70 rounded-full ml-4 transform rotate-3"></div>
+        </div>
 
         <div className="max-w-4xl mx-auto">
-          <TimelineItem 
-            title="Software Engineer"
-            subtitle="Morgan Stanley"
-            date="2023 - Present"
-            icon={<Briefcase className="h-3 w-3 text-white" />}
-          >
-            <ul className="list-disc list-inside space-y-2">
-              <li>Migrated E*TRADE services to Spring Boot microservices architecture, improving system scalability and resilience.</li>
-              <li>Implemented containerization using Docker, Helm charts, and Kubernetes for improved deployment and service orchestration.</li>
-              <li>Wrote extensive unit tests using JUnit 5 and integrated with Spring Cloud Config for centralized configuration management.</li>
-              <li>Collaborated with cross-functional teams to ensure smooth integration between front-end and back-end systems.</li>
-            </ul>
-          </TimelineItem>
-
-          <TimelineItem 
-            title="Full Stack Developer"
-            subtitle="Flipkart"
-            date="2018 - 2020"
-            icon={<Briefcase className="h-3 w-3 text-white" />}
-          >
-            <ul className="list-disc list-inside space-y-2">
-              <li>Built responsive e-commerce interfaces using React/Redux, improving user engagement and conversion rates.</li>
-              <li>Developed Express.js and Spring Boot backend services with Redis caching, enhancing API response times by 30%.</li>
-              <li>Integrated payment gateways including Razorpay and Paytm, reducing payment failures by 15% through improved error handling.</li>
-              <li>Implemented real-time order tracking system that improved customer satisfaction and reduced support inquiries.</li>
-            </ul>
-          </TimelineItem>
-
-          <TimelineItem 
-            title="Software Development Intern"
-            subtitle="Tech Startup"
-            date="2017 - 2018"
-            icon={<Briefcase className="h-3 w-3 text-white" />}
-          >
-            <ul className="list-disc list-inside space-y-2">
-              <li>Designed and implemented responsive web interfaces using HTML5, CSS3, and JavaScript.</li>
-              <li>Assisted in developing RESTful APIs using Node.js and Express.</li>
-              <li>Collaborated with the UX/UI team to implement design improvements based on user feedback.</li>
-              <li>Participated in daily stand-ups and sprint planning meetings in an Agile development environment.</li>
-            </ul>
-          </TimelineItem>
+          {workExperience.map((job, index) => (
+            <WorkTimelineItem
+              key={index}
+              title={job.title}
+              company={job.company}
+              period={job.period}
+              details={job.details}
+              icon={index === 0 ? <Briefcase className="h-3 w-3 text-white animate-pulse" /> : <Radio className="h-3 w-3 text-white" />}
+              className="vhs-loading"
+            />
+          ))}
         </div>
       </div>
+      
+      {/* Decorative elements with wabi-sabi influence - intentionally imperfect */}
+      <div className="absolute bottom-10 right-10 h-24 w-24 border-4 border-dashed border-primary/30 rounded-full animate-spin-slow opacity-50 transform rotate-3"></div>
+      <div className="absolute top-10 left-10 h-16 w-16 border-4 border-dashed border-secondary/30 rounded-full animate-spin-slow opacity-50 transform -rotate-2"></div>
+      
+      {/* Abstract wabi-sabi blobs */}
+      <div className="absolute top-1/3 right-1/4 w-40 h-40 bg-gradient-to-r from-accent/10 to-primary/10 rounded-full blur-xl"></div>
+      <div className="absolute bottom-1/3 left-1/3 w-48 h-32 bg-gradient-to-l from-secondary/10 to-primary/10 rounded-full blur-xl transform rotate-12"></div>
     </section>
   );
 };

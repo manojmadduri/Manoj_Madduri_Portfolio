@@ -30,10 +30,10 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="section bg-background dark:bg-navy py-24">
+    <section id="projects" className="section bg-background dark:bg-background py-24">
       <div className="container mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
-          <span className="gradient-text">Featured Projects</span>
+          <span className="gradient-text">✨ Featured Projects ✨</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
@@ -67,7 +67,7 @@ const ProjectsSection = () => {
                       {project.techStack.map(tech => (
                         <span 
                           key={tech} 
-                          className="bg-secondary/15 text-secondary px-3 py-1 rounded-full text-sm"
+                          className="bg-primary/15 text-primary px-3 py-1 rounded-full text-sm"
                         >
                           {tech}
                         </span>
@@ -77,7 +77,7 @@ const ProjectsSection = () => {
                   <div className="flex gap-4">
                     <a 
                       href="#" 
-                      className="btn-primary flex-1 text-center"
+                      className="btn-primary flex-1 text-center rounded-full"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -85,7 +85,7 @@ const ProjectsSection = () => {
                     </a>
                     <a 
                       href="#" 
-                      className="btn-outline flex-1 text-center"
+                      className="btn-outline flex-1 text-center rounded-full"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

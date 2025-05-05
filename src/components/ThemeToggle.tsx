@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Moon, Sun } from 'lucide-react';
+import { Moon, Sun, Radio } from 'lucide-react';
 
 const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -33,14 +33,19 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="relative p-2 text-foreground rounded-full hover:bg-secondary/10 transition-colors"
+      className={`relative p-2 rounded-lg border-2 transition-all ${
+        isDarkMode 
+          ? 'bg-secondary/20 text-primary border-primary/30' 
+          : 'bg-primary/20 text-secondary border-secondary/30'
+      }`}
       aria-label="Toggle dark mode"
     >
       {isDarkMode ? (
-        <Sun className="h-5 w-5" />
-      ) : (
         <Moon className="h-5 w-5" />
+      ) : (
+        <Sun className="h-5 w-5" />
       )}
+      <span className="sr-only">{isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}</span>
     </button>
   );
 };

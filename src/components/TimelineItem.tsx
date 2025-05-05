@@ -7,11 +7,12 @@ interface TimelineItemProps {
   date: string;
   children: ReactNode;
   icon?: ReactNode;
+  className?: string;
 }
 
-const TimelineItem = ({ title, subtitle, date, children, icon }: TimelineItemProps) => {
+const TimelineItem = ({ title, subtitle, date, children, icon, className = '' }: TimelineItemProps) => {
   return (
-    <div className="timeline-item">
+    <div className={`timeline-item ${className}`}>
       <div className="timeline-dot">
         {icon || <div className="h-2 w-2 bg-white rounded-full"></div>}
       </div>

@@ -23,8 +23,8 @@ const AboutSection = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Profile Image */}
-          <div className="flex justify-center md:justify-end">
+          {/* Profile Image - Moved to the left side */}
+          <div className="flex justify-center md:justify-start order-2 md:order-1">
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-secondary">
               <div className="absolute inset-0 bg-gradient-cyan opacity-20"></div>
               <img
@@ -35,8 +35,8 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* About Content */}
-          <div className="flex flex-col space-y-6">
+          {/* About Content - Moved to the right side */}
+          <div className="flex flex-col space-y-6 order-1 md:order-2">
             <p className="text-lg">
               I'm a <span className="text-secondary font-semibold">Full Stack Developer</span> with over 5 years of experience building scalable web applications and distributed systems.
               Currently, I'm also pursuing my passion for research as an aspiring PhD candidate in Computer Science.

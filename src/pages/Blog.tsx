@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -5,7 +6,7 @@ import { blogPosts } from '@/data/blogPosts';
 import BlogPostCard from '@/components/BlogPostCard';
 import { Input } from '@/components/ui/input';
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
-import { Search } from 'lucide-react';  // Updated import
+import { Search, Radio } from 'lucide-react';  // Updated import
 
 const Blog: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -28,22 +29,31 @@ const Blog: React.FC = () => {
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background vintage-paper">
       <Navbar />
       <main className="flex-grow pt-24 pb-16">
         <div className="container mx-auto px-4">
-          <section className="mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Blog</h1>
-            <p className="text-lg text-foreground/80 max-w-3xl">
-              Insights, tutorials, and updates from the world of technology.
-              Explore the latest trends in web development, artificial intelligence, and more.
+          <section className="mb-12 text-center">
+            <div className="inline-flex items-center px-4 py-2 rounded-full glass border-2 border-primary/50 transform rotate-1 mb-4">
+              <Radio className="h-4 w-4 mr-2 text-secondary animate-pulse" />
+              <p className="text-foreground/90 font-space-mono text-sm">
+                Retro Blog Collection
+              </p>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 font-mono neon-text retro-text transform rotate-[0.5deg]">
+              Tech Chronicles
+            </h1>
+            
+            <p className="text-lg text-foreground/80 max-w-2xl mx-auto font-mono">
+              Musings, tutorials, and tech insights from the digital frontier.
             </p>
             
-            <div className="mt-8 relative max-w-md">
+            <div className="mt-8 relative max-w-md mx-auto">
               <Input
                 type="text"
                 placeholder="Search articles..."
-                className="pl-10"
+                className="pl-10 border-2 border-primary/30 font-mono text-sm"
                 value={searchTerm}
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
@@ -57,13 +67,13 @@ const Blog: React.FC = () => {
           </section>
 
           {filteredPosts.length === 0 ? (
-            <div className="text-center py-12">
-              <h3 className="text-xl font-medium mb-2">No posts found</h3>
-              <p className="text-muted-foreground">Try adjusting your search terms.</p>
+            <div className="text-center py-12 glass p-8 max-w-md mx-auto">
+              <h3 className="text-xl font-medium mb-2 font-mono">No posts found</h3>
+              <p className="text-muted-foreground font-mono">Try adjusting your search terms.</p>
             </div>
           ) : (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {currentPosts.map((post) => (
                   <BlogPostCard key={post.id} post={post} />
                 ))}
@@ -95,6 +105,7 @@ const Blog: React.FC = () => {
                             <PaginationLink
                               onClick={() => setCurrentPage(pageNum)}
                               isActive={currentPage === pageNum}
+                              className={currentPage === pageNum ? "font-mono" : "font-mono"}
                             >
                               {pageNum}
                             </PaginationLink>

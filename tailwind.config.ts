@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,30 +63,29 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))'
         },
-        indigo: {
-          DEFAULT: '#6366F1',
-          light: '#818CF8',
-          dark: '#4F46E5'
+        pink: {
+          50: '#FFF0FB',
+          100: '#FFE1F7',
+          200: '#FFC3EF',
+          300: '#FF96E0',
+          400: '#FF61D8',
+          500: '#FF38C6',
+          600: '#E612A5',
+          700: '#B30D81',
+          800: '#800D5D',
+          900: '#4D0836',
         },
-        violet: {
-          DEFAULT: '#8B5CF6',
-          light: '#A78BFA',
-          dark: '#7C3AED'
-        },
-        rose: {
-          DEFAULT: '#F43F5E',
-          light: '#FB7185',
-          dark: '#E11D48'
-        },
-        teal: {
-          DEFAULT: '#14B8A6',
-          light: '#2DD4BF',
-          dark: '#0D9488'
-        },
-        amber: {
-          DEFAULT: '#F59E0B',
-          light: '#FBBF24',
-          dark: '#D97706'
+        purple: {
+          50: '#F5F3FF',
+          100: '#EDE9FE',
+          200: '#DDD6FE',
+          300: '#C4B5FD',
+          400: '#A78BFA',
+          500: '#8B5CF6',
+          600: '#7C3AED',
+          700: '#6D28D9',
+          800: '#5B21B6',
+          900: '#4C1D95',
         }
       },
       fontFamily: {
@@ -93,6 +93,7 @@ export default {
         inter: ['Inter', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
         lato: ['Lato', 'sans-serif'],
+        'space-mono': ['"Space Mono"', 'monospace'],
       },
       borderRadius: {
         lg: 'var(--radius)',
