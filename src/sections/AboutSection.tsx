@@ -28,7 +28,7 @@ const AboutSection = () => {
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-secondary">
               <div className="absolute inset-0 bg-gradient-cyan opacity-20"></div>
               <img
-                src="src\pic.jpg"
+                src="https://drive.google.com/file/d/187b9r2x6X7DyRrwkUqGvgq1jEwsLwHj4/view?usp=sharing"
                 alt="Manoj Madduri"
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
               />

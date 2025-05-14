@@ -19,7 +19,7 @@ const ResumeSection = () => {
             <span className="gradient-text">Resume</span>
           </h2>
           <a 
-            href="src\Manoj_Madduri_Resume.docx" 
+            href="https://docs.google.com/document/d/14GsCWC755eARx6SFuPoAutUYj-hP4-3d/edit?usp=sharing&ouid=114987565898114948870&rtpof=true&sd=true" 
             target="_blank" 
             rel="noopener noreferrer"
             className="btn-primary flex items-center gap-2"
