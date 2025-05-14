@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail, Twitter, Radio, ExternalLink, Music, Sparkles } from 'lucide-react';
+import { Github, Linkedin, Mail, Twitter, Radio, ExternalLink, Music, Sparkles, Globe } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -54,6 +54,15 @@ const Footer = () => {
               >
                 <Twitter className="h-5 w-5" />
               </a>
+              <a 
+                href="hhttps://huggingface.co/manojkakashi" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-foreground/70 hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10 border-2 border-primary/20 hover:border-primary/40 transform hover:rotate-3 hover:scale-110"
+                aria-label="Hugging Face"
+              >
+                <Globe className="h-5 w-5" />
+              </a>
             </div>
           </div>
           
@@ -68,6 +77,7 @@ const Footer = () => {
               <li><a href="/#research" className="text-sm text-foreground/70 hover:text-primary transition-colors font-mono emoji-bullet transform hover:translate-x-1 inline-block">Research</a></li>
               <li><a href="/blog" className="text-sm text-foreground/70 hover:text-primary transition-colors font-mono emoji-bullet transform hover:translate-x-1 inline-block">Blog</a></li>
               <li><a href="/#contact" className="text-sm text-foreground/70 hover:text-primary transition-colors font-mono emoji-bullet transform hover:translate-x-1 inline-block">Contact</a></li>
+              <li><a href="https://huggingface.co/manojkakashi" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/70 hover:text-primary transition-colors font-mono emoji-bullet transform hover:translate-x-1 inline-block">Hugging Face</a></li>
             </ul>
           </div>
           

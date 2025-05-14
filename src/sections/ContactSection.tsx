@@ -1,6 +1,6 @@
-
 import { useState } from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Globe } from 'lucide-react';
+import { toast } from "@/components/ui/use-toast";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -10,31 +10,49 @@ const ContactSection = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+    try {
+      const response = await fetch('https://formspree.io/f/xqaqwqzk', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
       
-      // Reset success message after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
-    }, 1500);
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Your message could not be sent. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -85,123 +103,123 @@ const ContactSection = () => {
                   <Linkedin className="h-5 w-5 text-secondary" />
                 </div>
                 <span>linkedin.com/in/manojmadduri</span>
-              </a>
+                </a>
+              
+              <a 
+                href="https://huggingface.co/manojkakashi" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-foreground/70 hover:text-secondary transition-colors group"
+              >
+                <div className="p-3 rounded-full bg-secondary/10 group-hover:bg-secondary/20 transition-colors">
+                  <Globe className="h-5 w-5 text-secondary" />
+                </div>
+                <span>huggingface.co/manojmadduri</span>
+                </a>
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="glass-card p-6 md:p-8">
-            {isSubmitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center animate-fade-in">
-                <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Message Sent!</h3>
-                <p className="text-foreground/70">Thank you for reaching out. I'll get back to you soon.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="relative">
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full bg-transparent border-b border-border py-2 focus:outline-none focus:border-secondary transition-colors peer"
-                      placeholder=" "
-                      required
-                    />
-                    <label 
-                      htmlFor="name"
-                      className="absolute left-0 -top-3.5 text-foreground/60 text-sm transition-all
-                        peer-placeholder-shown:text-base peer-placeholder-shown:text-foreground/60 peer-placeholder-shown:top-2
-                        peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-sm"
-                    >
-                      Name
-                    </label>
-                  </div>
-                  <div className="relative">
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full bg-transparent border-b border-border py-2 focus:outline-none focus:border-secondary transition-colors peer"
-                      placeholder=" "
-                      required
-                    />
-                    <label 
-                      htmlFor="email"
-                      className="absolute left-0 -top-3.5 text-foreground/60 text-sm transition-all
-                        peer-placeholder-shown:text-base peer-placeholder-shown:text-foreground/60 peer-placeholder-shown:top-2
-                        peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-sm"
-                    >
-                      Email
-                    </label>
-                  </div>
-                </div>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="relative">
                   <input
                     type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
+                    id="name"
+                    name="name"
+                    value={formData.name}
                     onChange={handleChange}
                     className="w-full bg-transparent border-b border-border py-2 focus:outline-none focus:border-secondary transition-colors peer"
                     placeholder=" "
                     required
                   />
                   <label 
-                    htmlFor="subject"
+                    htmlFor="name"
                     className="absolute left-0 -top-3.5 text-foreground/60 text-sm transition-all
                       peer-placeholder-shown:text-base peer-placeholder-shown:text-foreground/60 peer-placeholder-shown:top-2
                       peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-sm"
                   >
-                    Subject
+                    Name
                   </label>
                 </div>
                 <div className="relative">
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
                     onChange={handleChange}
-                    rows={5}
                     className="w-full bg-transparent border-b border-border py-2 focus:outline-none focus:border-secondary transition-colors peer"
                     placeholder=" "
                     required
-                  ></textarea>
+                  />
                   <label 
-                    htmlFor="message"
+                    htmlFor="email"
                     className="absolute left-0 -top-3.5 text-foreground/60 text-sm transition-all
                       peer-placeholder-shown:text-base peer-placeholder-shown:text-foreground/60 peer-placeholder-shown:top-2
                       peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-sm"
                   >
-                    Message
+                    Email
                   </label>
                 </div>
-                <button
-                  type="submit"
-                  className="btn-primary w-full"
-                  disabled={isSubmitting}
+              </div>
+              <div className="relative">
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-border py-2 focus:outline-none focus:border-secondary transition-colors peer"
+                  placeholder=" "
+                  required
+                />
+                <label 
+                  htmlFor="subject"
+                  className="absolute left-0 -top-3.5 text-foreground/60 text-sm transition-all
+                    peer-placeholder-shown:text-base peer-placeholder-shown:text-foreground/60 peer-placeholder-shown:top-2
+                    peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-sm"
                 >
-                  {isSubmitting ? (
-                    <span className="flex items-center justify-center">
-                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Sending...
-                    </span>
-                  ) : 'Send Message'}
-                </button>
-              </form>
-            )}
+                  Subject
+                </label>
+              </div>
+              <div className="relative">
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={5}
+                  className="w-full bg-transparent border-b border-border py-2 focus:outline-none focus:border-secondary transition-colors peer"
+                  placeholder=" "
+                  required
+                ></textarea>
+                <label 
+                  htmlFor="message"
+                  className="absolute left-0 -top-3.5 text-foreground/60 text-sm transition-all
+                    peer-placeholder-shown:text-base peer-placeholder-shown:text-foreground/60 peer-placeholder-shown:top-2
+                    peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-sm"
+                >
+                  Message
+                </label>
+              </div>
+              <button
+                type="submit"
+                className="btn-primary w-full"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <span className="flex items-center justify-center">
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Sending...
+                  </span>
+                ) : 'Send Message'}
+              </button>
+            </form>
           </div>
         </div>
       </div>
