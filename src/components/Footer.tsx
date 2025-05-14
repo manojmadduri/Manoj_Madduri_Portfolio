@@ -17,18 +17,18 @@ const Footer = () => {
               Manoj<span className="text-foreground">.dev</span>
             </a>
             <p className="mt-3 text-sm text-foreground/70 max-w-xs font-mono">
-              Full Stack Developer & Aspiring PhD Candidate specializing in modern web technologies and AI research.
+            Software Engineer & Aspiring PhD Candidate specializing in modern web technologies and AI research.
             </p>
             <div className="flex items-center space-x-4 mt-4">
               <a 
-                href="mailto:contact@manojmadduri.com" 
+                href="mailto:mmanoj.fall2021@gmail.com" 
                 className="text-foreground/70 hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10 border-2 border-primary/20 hover:border-primary/40 transform hover:rotate-3 hover:scale-110"
                 aria-label="Email"
               >
                 <Mail className="h-5 w-5" />
               </a>
               <a 
-                href="https://github.com" 
+                href="https://github.com/manojmadduri" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-foreground/70 hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10 border-2 border-primary/20 hover:border-primary/40 transform hover:rotate-3 hover:scale-110"
@@ -37,7 +37,7 @@ const Footer = () => {
                 <Github className="h-5 w-5" />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/manoj-madduri/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-foreground/70 hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10 border-2 border-primary/20 hover:border-primary/40 transform hover:rotate-3 hover:scale-110"
@@ -46,7 +46,7 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a 
-                href="https://twitter.com" 
+                href="https://twitter.com/manoj-madduri" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-foreground/70 hover:text-primary transition-colors p-2 rounded-full hover:bg-primary/10 border-2 border-primary/20 hover:border-primary/40 transform hover:rotate-3 hover:scale-110"

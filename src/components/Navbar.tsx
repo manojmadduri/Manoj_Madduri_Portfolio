@@ -73,7 +73,7 @@ const Navbar = () => {
           onClick={handleHomeClick} 
           className="text-2xl font-bold font-space-mono gradient-text cursor-pointer border-none bg-transparent"
         >
-          Manoj<span className="text-foreground">.dev</span>
+          Manoj<span className="text-foreground">.ai</span>
         </button>
 
         {/* Desktop Navigation */}

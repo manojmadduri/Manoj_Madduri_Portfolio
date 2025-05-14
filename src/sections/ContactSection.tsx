@@ -60,11 +60,11 @@ const ContactSection = () => {
                 <div className="p-3 rounded-full bg-secondary/10 group-hover:bg-secondary/20 transition-colors">
                   <Mail className="h-5 w-5 text-secondary" />
                 </div>
-                <span>contact@manojmadduri.com</span>
+                <span>mmanoj.fall2021@gmail.com</span>
               </a>
               
               <a 
-                href="https://github.com" 
+                href="https://github.com/manojmadduri" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-foreground/70 hover:text-secondary transition-colors group"
@@ -76,7 +76,7 @@ const ContactSection = () => {
               </a>
               
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/manoj-madduri/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-foreground/70 hover:text-secondary transition-colors group"

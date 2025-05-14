@@ -28,7 +28,7 @@ const AboutSection = () => {
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-secondary">
               <div className="absolute inset-0 bg-gradient-cyan opacity-20"></div>
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3"
+                src="https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png"
                 alt="Manoj Madduri"
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
               />
@@ -38,14 +38,15 @@ const AboutSection = () => {
           {/* About Content - Moved to the right side */}
           <div className="flex flex-col space-y-6 order-1 md:order-2">
             <p className="text-lg">
-              I'm a <span className="text-secondary font-semibold">Full Stack Developer</span> with over 5 years of experience building scalable web applications and distributed systems.
+              I'm a <span className="text-secondary font-semibold">Software Developer</span> with over 5 years of experience building scalable web applications and distributed systems.
               Currently, I'm also pursuing my passion for research as an aspiring PhD candidate in Computer Science.
             </p>
 
             <div>
               <h3 className="text-xl font-semibold mb-2">Education</h3>
               <ul className="list-disc list-inside space-y-2 text-foreground/80">
-                <li>M.S. in Computer Information Systems – CBU, GPA: 3.54</li>
+                <li>M.S. in Computer Information Systems</li>
+                <li>Magna Cum Laude CBU - GPA: 3.54</li>
                 <li>B.Tech in EEE – NRI Institute of Technology</li>
               </ul>
             </div>

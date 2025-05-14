@@ -23,9 +23,9 @@ const HeroSection = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-foreground/80 font-space-mono">
               <TypingAnimation 
                 phrases={[
-                  'Full Stack Developer',
-                  'Aspiring PhD Candidate',
                   'AI Enthusiast',
+                  'Aspiring PhD Candidate',
+                  'Software Developer',
                   'Problem Solver'
                 ]} 
               />

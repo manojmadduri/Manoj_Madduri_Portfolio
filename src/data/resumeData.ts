@@ -2,13 +2,13 @@
 export const education = [
   {
     degree: "M.S. in Computer Information Systems",
-    institution: "California Baptist University",
+    institution: "Christian Brothers University (CBU), Memphis, TN",
     year: "2021 - 2023",
     gpa: "3.54/4.0",
     details: [
-      "Focus on Advanced Algorithms and Distributed Systems",
+      "Focus on Advanced Data Science, Database / Big Data Management and Data Visualization",
       "Research on Semantic Memory Networks and Vector Embeddings",
-      "Graduate Teaching Assistant for Database Systems"
+      
     ]
   },
   {
@@ -55,50 +55,57 @@ export const certifications = [
   {
     name: "AWS Certified Solutions Architect",
     issuer: "Amazon Web Services",
-    date: "2022",
+    date: "Ongoing",
     link: "#"
   },
   {
-    name: "Professional Scrum Master I",
-    issuer: "Scrum.org",
-    date: "2021",
-    link: "#"
-  },
-  {
-    name: "Full Stack Web Development",
-    issuer: "freeCodeCamp",
-    date: "2020",
+    name: "Google Cloud Professional Data Engineer",
+    issuer: "Google Cloud",
+    date: "Ongoing",
     link: "#"
   },
   {
     name: "Machine Learning Specialization",
     issuer: "Coursera (Stanford University)",
-    date: "2019",
-    link: "#"
+    date: "Ongoing",
+    link: "https://www.coursera.org/learn/machine-learning"
+  },
+
+  {
+    name: "Responsive Web Design",
+    issuer: "freeCodeCamp",
+    date: "2023",
+    link: "https://www.freecodecamp.org/certification/fcc6ab87d3f-80bb-40c1-ae35-7bdc21a4e9b4/responsive-web-design"
+  },
+  {
+    name: "Back End Development and APIs",
+    issuer: "freeCodeCamp",
+    date: "2024",
+    link: "https://www.freecodecamp.org/certification/fcc6ab87d3f-80bb-40c1-ae35-7bdc21a4e9b4/back-end-development-and-apis"
   }
 ];
 
 export const workExperience = [
   {
     title: "Software Engineer",
-    company: "Morgan Stanley",
+    company: "ManKind America LLC",
     period: "2023 - Present",
     details: [
-      "Migrated E*TRADE services to Spring Boot microservices architecture, improving system scalability and resilience.",
-      "Implemented containerization using Docker, Helm charts, and Kubernetes for improved deployment and service orchestration.",
-      "Wrote extensive unit tests using JUnit 5 and integrated with Spring Cloud Config for centralized configuration management.",
-      "Collaborated with cross-functional teams to ensure smooth integration between front-end and back-end systems."
+      "Designed and developed scalable cloud-based data systems using Python, Flask, and AWS.",
+      "Optimized large-scale data processing applications with cloud-native technologies.",
+      "Enhanced system security and scalability through secure API design.",
+      "Contributed to real-time data applications, integrating machine learning models for predictive analytics."
     ]
   },
   {
-    title: "Full Stack Developer",
-    company: "Flipkart",
+    title: "Software Engineer",
+    company: "Keus Automation",
     period: "2018 - 2020",
     details: [
-      "Built responsive e-commerce interfaces using React/Redux, improving user engagement and conversion rates.",
-      "Developed Express.js and Spring Boot backend services with Redis caching, enhancing API response times by 30%.",
-      "Integrated payment gateways including Razorpay and Paytm, reducing payment failures by 15% through improved error handling.",
-      "Implemented real-time order tracking system that improved customer satisfaction and reduced support inquiries."
+      "Engineered backend components for data-driven applications using Java.",
+      "Collaborated on frontend development using JavaScript frameworks.",
+      "Implemented secure API integrations and cloud-based deployment strategies",
+      
     ]
   }
 ];
