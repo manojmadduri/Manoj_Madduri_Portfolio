@@ -1,6 +1,9 @@
 import ProjectCard from '../components/ProjectCard';
+import React, { useState } from 'react';
 
 const ProjectsSection = () => {
+  const [showComingSoon, setShowComingSoon] = useState(false);
+
   const projects = [
     {
       title: "AI Memory Clone",
@@ -8,7 +11,7 @@ const ProjectsSection = () => {
       image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=500&auto=format",
       techStack: ["Python", "SQLite", "Ollama LLM", "React", "Face Recognition API"],
       demoUrl: "https://ai-memory-clone-demo.example.com",
-      githubUrl: "https://github.com/example/ai-memory-clone",
+      githubUrl: "https://github.com/manojmadduri/ai-memory-clone",
       features: [
         "Voice-activated memory storage and retrieval",
         "Face recognition for personalized interactions",
@@ -22,7 +25,7 @@ const ProjectsSection = () => {
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format",
       techStack: ["Node.js", "Discord.js", "MongoDB", "Financial APIs"],
       demoUrl: "https://discord-finance-bot.example.com",
-      githubUrl: "https://github.com/example/discord-finance-bot",
+      githubUrl: "https://github.com/manojmadduri/financial-bot-project",
       features: [
         "Automated price alerts for stocks and cryptocurrencies",
         "Portfolio tracking and performance analysis",
@@ -108,18 +111,22 @@ const ProjectsSection = () => {
                   </div>
                   <div className="flex gap-4">
                     {project.demoUrl && (
-                      <a 
-                        href={project.demoUrl} 
+                      <a
+                        href={project.demoUrl}
                         className="btn-primary flex-1 text-center rounded-full"
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setShowComingSoon(true);
+                        }}
                       >
                         Live Demo
                       </a>
                     )}
                     {project.githubUrl && (
-                      <a 
-                        href={project.githubUrl} 
+                      <a
+                        href={project.githubUrl}
                         className="btn-outline flex-1 text-center rounded-full"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -134,6 +141,20 @@ const ProjectsSection = () => {
           ))}
         </div>
       </div>
+      {showComingSoon && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-8">
+            <h2 className="text-2xl font-bold mb-4">Coming Soon!</h2>
+            <p>This demo is not yet available. Please check back later.</p>
+            <button
+              className="btn-primary mt-4"
+              onClick={() => setShowComingSoon(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
