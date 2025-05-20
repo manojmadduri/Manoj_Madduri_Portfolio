@@ -24,7 +24,7 @@ const ProjectsSection = () => {
       description: "Real-time financial data bot for Discord that provides stock and crypto price alerts, news, and trading insights.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format",
       techStack: ["Node.js", "Discord.js", "MongoDB", "Financial APIs"],
-      demoUrl: "https://discord-finance-bot.example.com",
+      demoUrl: "https://discord.gg/FM34e3eF",
       githubUrl: "https://github.com/manojmadduri/financial-bot-project",
       features: [
         "Automated price alerts for stocks and cryptocurrencies",
