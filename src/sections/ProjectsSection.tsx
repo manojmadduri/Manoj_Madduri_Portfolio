@@ -48,17 +48,18 @@ const ProjectsSection = () => {
       ]
     },
     {
-      title: "E-commerce Platform",
-      description: "Full-featured e-commerce platform with product catalog, cart management, payments, and order tracking functionality.",
+      title: "Smart Data Processor",
+      description: "Turn your text files into AI datasets in seconds.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&auto=format",
-      techStack: ["React", "Node.js", "MongoDB", "Redux", "Payment Gateway APIs"],
-      demoUrl: "https://ecommerce-demo.example.com",
-      githubUrl: "https://github.com/example/ecommerce-platform",
+      techStack: ["Python", "Node.js", "React", "NLP Libraries", "RESTful endpoints", "Tailwind CSS"],
+      demoUrl: "https://smart-data-processor.vercel.app/",
+      githubUrl: "https://github.com/manojmadduri/smart-data-processor-local",
       features: [
-        "Advanced product search and filtering",
-        "Secure payment processing integration",
-        "Personalized product recommendations",
-        "Inventory and order management dashboard"
+        "AI-powered question generation using sentence embeddings",
+        "Smart topic classification (Work, Family, Travel, etc.)",
+        "Automatic date extraction and normalization",
+        "Beautiful drag-and-drop interface with real-time progress",
+        "Dual output formats for different AI use cases"
       ]
     }
   ];
