@@ -111,7 +111,17 @@ const ProjectsSection = () => {
                     </div>
                   </div>
                   <div className="flex gap-4">
-                    {project.demoUrl && (
+                    {project.demoUrl && project.title === "Smart Data Processor" && (
+                      <a
+                        href={project.demoUrl}
+                        className="btn-primary flex-1 text-center rounded-full"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live Demo
+                      </a>
+                    )}
+                    {project.demoUrl && project.title !== "Smart Data Processor" && (
                       <a
                         href={project.demoUrl}
                         className="btn-primary flex-1 text-center rounded-full"
